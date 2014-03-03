@@ -1,49 +1,66 @@
 <!--
 
-	BootstrapForLimeSurvey
-	A Responsive LimeSurvey Template Based On Bootstrap
-	(c) 2013 mofog (http://mofog.github.io/BootstrapForLimeSurvey)
+    LimeFrame
+    =========
+
+    Limesurvey template based on HasGeek Baseframe,
+    customised from BootstrapForLimeSurvey
 
 -->
 
-<title>{SURVEYNAME} {GROUPNAME}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>{SURVEYNAME} {GROUPNAME} {SITENAME}</title>
 <meta name="generator" content="LimeSurvey http://www.limesurvey.org" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 {TEMPLATECSS}
 <link rel="stylesheet" href="{TEMPLATEURL}bootstrap/css/jquery-ui-bootstrap/jquery-ui.css">
 <link rel="stylesheet" href="{TEMPLATEURL}bootstrap/css/jquery-ui-bootstrap/jquery-ui.ie.css">
-<link rel="stylesheet" href="{TEMPLATEURL}bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="{TEMPLATEURL}bootstrap/css/bootstrap-theme.min.css">
-
+<link rel="stylesheet" href="https://api.hasgeek.com/_baseframe/css/bootstrap3/bootstrap.css">
+<link rel="stylesheet" href="https://api.hasgeek.com/_baseframe/css/baseframe-bs3.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,600italic,400,600" />
 
 {TEMPLATEJS}
 <script src="{TEMPLATEURL}bootstrap/js/jquery.min.js"></script>
 <script>
-	var bfls = jQuery.noConflict(true);
+    var bfls = jQuery.noConflict(true);
 </script>
 <script src="{TEMPLATEURL}bootstrap/js/bootstrap.min.js"></script>
 
 <link rel="shortcut icon" href="{TEMPLATEURL}images/favicon.ico" />
+<link rel="image_src" href="{TEMPLATEURL}images/logo.png" />
+<meta property="og:image" content="{TEMPLATEURL}images/logo.png" />
 {GOOGLE_ANALYTICS_JAVASCRIPT}
 </head>
 
 <body class="lang-{SURVEYLANGUAGE} {SURVEYFORMAT}">
-	<div class="container bflsJavaScriptInfo">
-		<div class="panel panel-default">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">JavaScript</h3>
-		  </div>
-		  <div class="panel-body">
-				{CHECKJAVASCRIPT}
-		  </div>
-		</div>
-	</div>
-	<script>
-		bfls('.bflsJavaScriptInfo').hide();
-	</script>
-	
-	<div class="container bflsMainContent" style="display: none;">
-		<div class="row">
-			<div class="col-md-12 content-col">
+<div id="root">
+    <header>
+        <div id="networkbar" data-siteid="surveys"></div>
+        <div class="container">
+            <div id="page-header">
+                <div id="logo" class="logo-survey">
+                    <a href="/" title="Home">{SITENAME}</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container bflsJavaScriptInfo">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">JavaScript</h3>
+          </div>
+          <div class="panel-body">
+                {CHECKJAVASCRIPT}
+          </div>
+        </div>
+    </div>
+    <script>
+        bfls('.bflsJavaScriptInfo').hide();
+    </script>
+    
+    <div class="container bflsMainContent" style="display: none;">
+        <div class="row">
+            <div class="col-md-12 content-col">

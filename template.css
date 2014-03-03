@@ -1,6 +1,18 @@
+/*
 body {
 	padding-top: 70px;
 	padding-bottom: 20px;
+}
+*/
+
+#networkbar {
+	min-height: 30px;
+}
+
+#logo {
+  background-image: url("images/logo.png") !important;
+  width: 120px !important;
+  height: 75px !important;
 }
 
 .table>tbody>tr>th {

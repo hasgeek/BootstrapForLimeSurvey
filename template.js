@@ -8,7 +8,7 @@
 
 (function waitForBfls(){
 	setTimeout(function(){
-		if (!(typeof bfls === 'undefined')) {
+		if (typeof bfls !== 'undefined') {
 			bfls(document).ready(function(){
 				//Fix LimeSurvey's CSS and JS
 				fixUi();
@@ -71,16 +71,16 @@ function fixUi() {
 	
 	value = bfls('#movenextbtn').text();
 	disabled = (bfls('#movenextbtn').attr('aria-disabled')=='true')?'disabled aria-disabled="true"':'aria-disabled=false';
-	bfls('#movenextbtn').replaceWith('<button type="submit" id="movenextbtn" value="movenext" name="movenext" accesskey="n" class="submit btn btn-default btn-primary navbar-btn" role="button" '+ disabled +'>'+ value +'</button>');
+	bfls('#movenextbtn').replaceWith('<button type="submit" id="movenextbtn" value="movenext" name="movenext" accesskey="n" class="submit btn btn-primary navbar-btn" role="button" '+ disabled +'>'+ value +'</button>');
 	
 	value = bfls('#movesubmitbtn').text();
 	disabled = (bfls('#movesubmitbtn').attr('aria-disabled')=='true')?'disabled aria-disabled="true"':'aria-disabled=false';
-	bfls('#movesubmitbtn').replaceWith('<button type="submit" id="movesubmitbtn" value="movesubmit" name="movesubmit" accesskey="l" class="submit btn btn-default btn-success navbar-btn" role="button" '+ disabled +'>'+ value +'</button>');
+	bfls('#movesubmitbtn').replaceWith('<button type="submit" id="movesubmitbtn" value="movesubmit" name="movesubmit" accesskey="l" class="submit btn btn-success navbar-btn" role="button" '+ disabled +'>'+ value +'</button>');
 
 	if (bfls(':button[value="movesubmit"][name="move"]').length > 0) {
 		value = bfls(':button[value="movesubmit"][name="move"]').eq(0).text();
 		disabled = (bfls(':button[value="movesubmit"][name="move"]').eq(0).attr('aria-disabled')=='true')?'disabled aria-disabled="true"':'aria-disabled=false';
-		bfls(':button[value="movesubmit"][name="move"]').replaceWith('<button type="submit" value="movesubmit" name="move" class="submit btn btn-default btn-success btn-block" role="button" '+ disabled +'>'+ value +'</button>');
+		bfls(':button[value="movesubmit"][name="move"]').replaceWith('<button type="submit" value="movesubmit" name="move" class="submit btn btn-success btn-block" role="button" '+ disabled +'>'+ value +'</button>');
 	}
 	
 	value  = bfls('a.clearall span').text();
@@ -101,6 +101,7 @@ function fixUi() {
 	bfls('#saveallbtn').replaceWith('<button type="submit" id="saveallbtn" value="saveall" name="saveall" class="saveall btn btn-default navbar-btn" role="button" '+ disabled +'>'+ value +'</button>');
 	
 	bfls(':button').addClass('btn btn-default');
+	bfls('.btn-primary').removeClass('btn-default');
 	bfls('select').addClass('form-control');
 	bfls('textarea').addClass('form-control');
 	
@@ -185,17 +186,17 @@ function setupAnswers() {
 		if (bfls('.answer .answer ul').eq(index).children('li').length < 13) {
 			columnWidth = Math.floor(12/bfls('.answer .answer ul').eq(index).children('li').length);
 		} else {
-			columnWidth = 12;		
+			columnWidth = 12;
 		}
 		
 		bfls('.answer .answer ul').eq(index).children().wrapAll('<div class="row"></div>');
-		bfls('.answer .answer ul').eq(index).children('div').children('li').wrap('<div class="col-md-'+ columnWidth +'"></div>');	
+		bfls('.answer .answer ul').eq(index).children('div').children('li').wrap('<div class="col-md-'+ columnWidth +'"></div>');
 	});
 	
 	bfls('.answer .radio-list .radio-item').each(function(index) {
 		bfls('.answer .radio-list .radio-item').eq(index).children('input').removeAttr('class');
 		bfls('.answer .radio-list .radio-item').eq(index).children('input').prependTo(bfls('.answer .radio-list .radio-item').eq(index).children('label'));
-		bfls('.answer .radio-list .radio-item').eq(index).children('label').wrap('<div class="radio" style="padding-right: 20px;"></div>')
+		bfls('.answer .radio-list .radio-item').eq(index).children('label').wrap('<div class="radio" style="padding-right: 20px;"></div>');
 	});
 	bfls('.answer .radio-list .radio-item div.radio label.hide').contents().filter(function(){
 		return this.nodeType == 3;
@@ -206,7 +207,7 @@ function setupAnswers() {
 	bfls('.answer table').wrap('<div class="table-responsive"></div>');
 	bfls('.answer table').addClass('table table-striped table-hover table-condensed');
 	bfls('.answer table thead tr td').replaceWith('<th>&nbsp;</th>');
-	bfls('.survey-question-help > img').replaceWith('<span class="glyphicon glyphicon-info-sign pull-left">&nbsp;</span>');
+	bfls('.survey-question-help > img').replaceWith('<i class="icon-info-sign"></i>&nbsp;');
 	
 	bfls('.answer strong .errormandatory').unwrap();
 	bfls('.answer .errormandatory').addClass('text-danger');

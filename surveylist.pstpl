@@ -1,9 +1,9 @@
 <p class="pull-right" style="position: relative; top: -70px;">{LANGUAGECHANGER}</p>
-<div class="well survey-list-table">
+<div class="page-header">
 	<h1 class="site-name">{SITENAME}</h1>
+</div>
+<div class="survey-list-table">
 	<p>{SURVEYLISTHEADING}</p>
-	<p>
-		<ul>{SURVEYLIST}</ul>
-	</p>
+	<ul>{SURVEYLIST}</ul>
 	<p class="text-muted survey-contact">{SURVEYCONTACT}</p>
 </div>
