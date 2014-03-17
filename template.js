@@ -400,8 +400,8 @@ function setupTokenMessage() {
 			        <p>'+ message +'</p> \
 			      </div> \
 			      <div class="modal-footer"> \
-			        <button type="button" class="btn btn-default" data-dismiss="modal">&nbsp;&nbsp;<span class="glyphicon glyphicon-thumbs-down"></span>&nbsp;&nbsp;</button> \
-							<button type="button" class="btn btn-primary" onclick="window.location=\''+ bfls('a.clearall').attr('href') +'\';">&nbsp;&nbsp;<span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;&nbsp;</button> \
+			        <button type="button" class="btn btn-default" data-dismiss="modal">&nbsp;&nbsp;<i class="icon-thumbs-down"></i>&nbsp;&nbsp;</button> \
+							<button type="button" class="btn btn-primary" onclick="window.location=\''+ bfls('a.clearall').attr('href') +'\';">&nbsp;&nbsp;<i class="icon-thumbs-up"></i>&nbsp;&nbsp;</button> \
 			      </div> \
 			    </div><!-- /.modal-content --> \
 			  </div><!-- /.modal-dialog --> \
