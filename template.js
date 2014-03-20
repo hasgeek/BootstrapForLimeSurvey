@@ -189,8 +189,10 @@ function setupAnswers() {
 			columnWidth = 12;
 		}
 		
+		/*
 		bfls('.answer .answer ul').eq(index).children().wrapAll('<div class="row"></div>');
 		bfls('.answer .answer ul').eq(index).children('div').children('li').wrap('<div class="col-md-'+ columnWidth +'"></div>');
+		*/
 	});
 	
 	bfls('.answer .radio-list .radio-item').each(function(index) {
@@ -394,14 +396,14 @@ function setupTokenMessage() {
 			    <div class="modal-content"> \
 			      <div class="modal-header"> \
 			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> \
-			        <h4 class="modal-title">Mhh...</h4> \
+			        <h4 class="modal-title">Woah...</h4> \
 			      </div> \
 			      <div class="modal-body"> \
 			        <p>'+ message +'</p> \
 			      </div> \
 			      <div class="modal-footer"> \
-			        <button type="button" class="btn btn-default" data-dismiss="modal">&nbsp;&nbsp;<i class="icon-thumbs-down"></i>&nbsp;&nbsp;</button> \
-							<button type="button" class="btn btn-primary" onclick="window.location=\''+ bfls('a.clearall').attr('href') +'\';">&nbsp;&nbsp;<i class="icon-thumbs-up"></i>&nbsp;&nbsp;</button> \
+			        <button type="button" class="btn btn-default" data-dismiss="modal">No</button> \
+							<button type="button" class="btn btn-primary" onclick="window.location=\''+ bfls('a.clearall').attr('href') +'\';">Yes</button> \
 			      </div> \
 			    </div><!-- /.modal-content --> \
 			  </div><!-- /.modal-dialog --> \

@@ -1,8 +1,8 @@
 <div class="panel panel-default {QUESTION_CLASS}" style="page-break-inside: avoid;">
 	<div class="panel-heading">
 		<h3 class="panel-title">
-			<span class="text-danger">{QUESTION_MANDATORY}</span>
 			<span class="question-text"><span class="question-number">{QUESTION_NUMBER}</span>{QUESTION_TEXT}</span>
+			<span class="text-danger">{QUESTION_MANDATORY}</span>
 		</h3>
 	</div>
 	<div class="panel-body">		
