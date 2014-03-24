@@ -77,6 +77,8 @@ function fixUi() {
 	disabled = (bfls('#movesubmitbtn').attr('aria-disabled')=='true')?'disabled aria-disabled="true"':'aria-disabled=false';
 	bfls('#movesubmitbtn').replaceWith('<button type="submit" id="movesubmitbtn" value="movesubmit" name="movesubmit" accesskey="l" class="submit btn btn-success navbar-btn" role="button" '+ disabled +'>'+ value +'</button>');
 
+	bfls("button#clearall").removeClass('ui-widget');
+
 	if (bfls(':button[value="movesubmit"][name="move"]').length > 0) {
 		value = bfls(':button[value="movesubmit"][name="move"]').eq(0).text();
 		disabled = (bfls(':button[value="movesubmit"][name="move"]').eq(0).attr('aria-disabled')=='true')?'disabled aria-disabled="true"':'aria-disabled=false';
