@@ -10,7 +10,7 @@
 					{SAVE}
 				</div>
 				<div class="col-sm-4">
-					{CLEARALL}
+					<!-- {CLEARALL} -->
 				</div>
 			</div>
 		</div>

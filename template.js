@@ -104,6 +104,7 @@ function fixUi() {
 	
 	bfls(':button').addClass('btn btn-default');
 	bfls('.btn-primary').removeClass('btn-default');
+	bfls('.btn-success').removeClass('btn-default');
 	bfls('select').addClass('form-control');
 	bfls('textarea').addClass('form-control');
 	
@@ -183,7 +184,8 @@ function setupQuestionGroups() {
 function setupAnswers() {
 	bfls('.answer .tip').addClass('text-muted small');
 	bfls('.answer .answer ul').addClass('list-unstyled');
-	
+
+/*	
 	bfls('.answer .answer ul').each(function(index) {
 		if (bfls('.answer .answer ul').eq(index).children('li').length < 13) {
 			columnWidth = Math.floor(12/bfls('.answer .answer ul').eq(index).children('li').length);
@@ -191,12 +193,22 @@ function setupAnswers() {
 			columnWidth = 12;
 		}
 		
-		/*
 		bfls('.answer .answer ul').eq(index).children().wrapAll('<div class="row"></div>');
 		bfls('.answer .answer ul').eq(index).children('div').children('li').wrap('<div class="col-md-'+ columnWidth +'"></div>');
-		*/
 	});
-	
+*/
+
+	bfls('.answer .answer .colstyle-ul').parent().wrap('<div class="row"></div>');
+	bfls('.cols-2-ul').removeClass('cols-2-ul').addClass('col-md-6');
+	bfls('.cols-3-ul').removeClass('cols-3-ul').addClass('col-md-4');
+	bfls('.cols-4-ul').removeClass('cols-4-ul').addClass('col-md-3');
+
+	bfls("input.other-checkbox + input").each(function(i, e) {
+		var p=bfls(e).parent();
+		bfls(e).detach();
+		p.append(e);
+	});
+
 	bfls('.answer .radio-list .radio-item').each(function(index) {
 		bfls('.answer .radio-list .radio-item').eq(index).children('input').removeAttr('class');
 		bfls('.answer .radio-list .radio-item').eq(index).children('input').prependTo(bfls('.answer .radio-list .radio-item').eq(index).children('label'));
