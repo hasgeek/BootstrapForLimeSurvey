@@ -203,12 +203,6 @@ function setupAnswers() {
 	bfls('.cols-3-ul').removeClass('cols-3-ul').addClass('col-md-4');
 	bfls('.cols-4-ul').removeClass('cols-4-ul').addClass('col-md-3');
 
-	bfls("input.other-checkbox + input").each(function(i, e) {
-		var p=bfls(e).parent();
-		bfls(e).detach();
-		p.append(e);
-	});
-
 	bfls('.answer .radio-list .radio-item').each(function(index) {
 		bfls('.answer .radio-list .radio-item').eq(index).children('input').removeAttr('class');
 		bfls('.answer .radio-list .radio-item').eq(index).children('input').prependTo(bfls('.answer .radio-list .radio-item').eq(index).children('label'));
@@ -289,6 +283,13 @@ function setupAnswers() {
 			bfls('.subquestions-list li').eq(index).children('span.option').children('label').wrap('<div class="checkbox"></div>');
 		});
 	}
+
+	bfls("input.other-checkbox + input").each(function(i, e) {
+		var p=bfls(e).parent();
+		bfls(e).detach();
+		p.append(e);
+	});
+
 }
 
 function setupResetForm() {
