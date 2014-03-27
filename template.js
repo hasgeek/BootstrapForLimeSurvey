@@ -202,6 +202,8 @@ function setupAnswers() {
 	bfls('.cols-2-ul').removeClass('cols-2-ul').addClass('col-md-6');
 	bfls('.cols-3-ul').removeClass('cols-3-ul').addClass('col-md-4');
 	bfls('.cols-4-ul').removeClass('cols-4-ul').addClass('col-md-3');
+	bfls('.cols-5-ul').removeClass('cols-5-ul').addClass('col-md-2');
+	bfls('.cols-6-ul').removeClass('cols-6-ul').addClass('col-md-2');
 
 	bfls('.answer .radio-list .radio-item').each(function(index) {
 		bfls('.answer .radio-list .radio-item').eq(index).children('input').removeAttr('class');
